@@ -1,0 +1,12 @@
+<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized "I" and Speed Lines Icon -->
+  <path d="M20 20H40L30 80H10L20 20Z" fill="#f97316"/>
+  <path d="M45 30H75L70 45H40L45 30Z" fill="#f97316" opacity="0.8"/>
+  <path d="M35 55H65L60 70H30L35 55Z" fill="#f97316" opacity="0.6"/>
+  
+  <!-- Text: INTERAUTO -->
+  <text x="85" y="70" font-family="Arial, sans-serif" font-weight="900" font-size="52" fill="#f97316" style="letter-spacing: -2px;">INTERAUTO</text>
+  
+  <!-- Tagline -->
+  <text x="88" y="88" font-family="Arial, sans-serif" font-weight="700" font-size="10" fill="#f97316" opacity="0.5" style="letter-spacing: 4px; text-transform: uppercase;">Premium C.A.</text>
+</svg>

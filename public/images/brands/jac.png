@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<script language="javascript" type="text/javascript"> 
+var i = 5; 
+var intervalid; 
+intervalid = setInterval("fun()", 1000); 
+function fun() { 
+if (i == 0) { 
+window.location.href = "https://www.jac.com.cn"; 
+clearInterval(intervalid); 
+} 
+document.getElementById("mes").innerHTML = i; 
+i--; 
+} 
+</script> 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=Edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="Description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta name="robots" content="noindex, nofollow">  
+	<title>404 页面未找到 江汽集团官方网站——江淮汽车官方网站</title>
+	<style>
+		#content{text-align: center; font-size:1.4rem;}
+		#content .baocuo{margin: 0 auto; width: 100%px;}
+		#footer{text-align: center; color: #999;padding-top:3rem;}
+	</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="content">
+		<div class="baocuo"><img src="404.jpg"></div>
+		<p>抱歉，您访问的页面不存在，请检查您的URL是否正确。</p>
+		<p>将在 <span id="mes">5</span> 秒钟后返回首页！</p> 
+	</div>
+	<div id="footer">江淮汽车版权所有 ICP备皖B2-20150083-1</div>
+</body>
+</html>

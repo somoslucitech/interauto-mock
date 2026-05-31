@@ -1,0 +1,4 @@
+<svg width="500" height="500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main shape with rounded left side -->
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M80 20V80H45C28.4315 80 15 66.5685 15 50C15 33.4315 28.4315 20 45 20H80ZM35 65L45 35H55L45 65H35ZM50 65L60 35H70L60 65H50ZM65 65L75 35H85L75 65H65Z" fill="#f97316"/>
+</svg>
