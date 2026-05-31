@@ -6,9 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:worker": "opennextjs-cloudflare",
+    "deploy": "opennextjs-cloudflare && wrangler deploy",
+    "preview": "opennextjs-cloudflare && wrangler dev"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.19.11",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.17.0",
@@ -25,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.95.0"
   }
 }
