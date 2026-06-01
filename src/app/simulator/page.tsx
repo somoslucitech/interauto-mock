@@ -44,9 +44,9 @@ interface Bank {
 }
 
 const BRANDS: Brand[] = [
-  { id: "jac", name: "JAC", logo: "https://www.jac.com.cn/upload/images/2021/11/17/1637110825001.png" },
-  { id: "dodge", name: "Dodge", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Dodge_logo.svg/1200px-Dodge_logo.svg.png" },
-  { id: "jeep", name: "Jeep", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Jeep_logo.svg/1200px-Jeep_logo.svg.png" },
+  { id: "jac", name: "JAC", logo: "/images/brands/jac.png" },
+  { id: "dodge", name: "Dodge", logo: "/images/brands/dodge.png" },
+  { id: "jeep", name: "Jeep", logo: "/images/brands/jeep.png" },
 ];
 
 const VEHICLES: Vehicle[] = [
