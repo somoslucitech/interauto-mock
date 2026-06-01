@@ -60,7 +60,6 @@ export default function LoginPage() {
                 type="text" 
                 placeholder="vendedor@interauto.com"
                 className="w-full bg-white/5 border border-white/10 rounded-2xl pl-14 pr-6 py-3 md:py-4 text-white focus:outline-none focus:border-orange/50 transition-all font-semibold text-sm md:text-base"
-                required
               />
             </div>
           </div>
@@ -73,7 +72,6 @@ export default function LoginPage() {
                 type="password" 
                 placeholder="••••••••"
                 className="w-full bg-white/5 border border-white/10 rounded-2xl pl-14 pr-6 py-3 md:py-4 text-white focus:outline-none focus:border-orange/50 transition-all font-semibold text-sm md:text-base"
-                required
               />
             </div>
           </div>

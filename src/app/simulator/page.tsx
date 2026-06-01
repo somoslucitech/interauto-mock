@@ -404,8 +404,7 @@ export default function SimulatorPage() {
 
                   <button 
                     onClick={() => setStep(5)}
-                    disabled={!clientData.name || !clientData.email}
-                    className="w-full btn-primary py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 group uppercase tracking-tighter disabled:opacity-20"
+                    className="w-full btn-primary py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 group uppercase tracking-tighter"
                   >
                     Generar Propuesta
                     <FileText size={22} className="group-hover:scale-110 transition-transform" />
