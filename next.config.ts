@@ -8,6 +8,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'jacvenezuela.com' },
       { protocol: 'https', hostname: 'www.ramtrucks.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'upload.wikimedia.org' },
     ],
   },
 };

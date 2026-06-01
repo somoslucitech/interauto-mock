@@ -1,12 +1,11 @@
 "use client";
 
-import Sidebar from "@/components/Sidebar";
+import DashboardWrapper from "@/components/DashboardWrapper";
 import { motion } from "framer-motion";
 import { 
   TrendingUp, 
   Users, 
   FileCheck, 
-  Car,
   MoreVertical,
   Plus,
   ArrowUpRight,
@@ -32,39 +31,37 @@ const RECENT_QUOTES = [
 
 export default function AdminDashboard() {
   return (
-    <div className="flex min-h-screen bg-background text-white">
-      <Sidebar />
-      
-      <main className="flex-1 ml-64 p-10 relative">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-orange/5 rounded-full blur-[150px] -z-10" />
+    <DashboardWrapper>
+      <div className="p-4 md:p-8 lg:p-10 relative">
+        <div className="absolute top-0 left-1/4 w-full max-w-[600px] h-[600px] bg-orange/5 rounded-full blur-[150px] -z-10" />
 
-        <header className="mb-12 flex justify-between items-end">
+        <header className="mb-10 lg:mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Sparkles size={18} className="text-yellow" />
               <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Gestión de Inteligencia</p>
             </div>
-            <h1 className="text-4xl font-black tracking-tighter">Panel de <span className="text-aquamarine">Control</span></h1>
+            <h1 className="text-3xl md:text-4xl font-black tracking-tighter">Panel de <span className="text-aquamarine">Control</span></h1>
           </div>
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-primary px-8 py-4 rounded-2xl font-black flex items-center gap-3 shadow-2xl shadow-orange/20 uppercase tracking-tighter"
+            className="w-full md:w-auto btn-primary px-8 py-4 rounded-2xl font-black flex items-center justify-center gap-3 shadow-2xl shadow-orange/20 uppercase tracking-tighter"
           >
             <Plus size={24} />
-            Actualizar Inventario
+            Actualizar
           </motion.button>
         </header>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-10">
           {STATS.map((stat, i) => (
             <motion.div 
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-[32px] glass-card group"
+              className="p-6 md:p-8 rounded-[32px] glass-card group"
             >
               <div className="flex justify-between items-start mb-6">
                 <div className={cn("p-4 rounded-2xl bg-white/5 group-hover:scale-110 transition-transform duration-500", stat.color)}>
@@ -84,39 +81,39 @@ export default function AdminDashboard() {
           ))}
         </div>
 
-        <div className="grid grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           {/* Recent Activity Table */}
-          <div className="col-span-8 glass-panel border-white/5 rounded-[40px] overflow-hidden">
-            <div className="p-8 border-b border-white/5 flex justify-between items-center">
-              <h3 className="font-black uppercase tracking-tighter text-xl">Monitor de Cotizaciones</h3>
+          <div className="lg:col-span-8 glass-panel border-white/5 rounded-[40px] overflow-hidden">
+            <div className="p-6 md:p-8 border-b border-white/5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <h3 className="font-black uppercase tracking-tighter text-xl">Monitor</h3>
               <button className="text-[10px] font-black text-orange uppercase tracking-widest hover:brightness-125 transition-all">Exportar Reporte</button>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full text-left">
+              <table className="w-full text-left min-w-[600px]">
                 <thead>
                   <tr className="bg-white/5 text-[10px] uppercase tracking-[0.2em] text-white/30">
-                    <th className="px-8 py-5 font-black">Identificador</th>
-                    <th className="px-8 py-5 font-black">Modelo</th>
-                    <th className="px-8 py-5 font-black">Inversión</th>
-                    <th className="px-8 py-5 font-black">Status</th>
-                    <th className="px-8 py-5 font-black"></th>
+                    <th className="px-6 md:px-8 py-5 font-black">ID</th>
+                    <th className="px-6 md:px-8 py-5 font-black">Modelo</th>
+                    <th className="px-6 md:px-8 py-5 font-black">Total</th>
+                    <th className="px-6 md:px-8 py-5 font-black">Status</th>
+                    <th className="px-6 md:px-8 py-5 font-black"></th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5">
+                <tbody className="divide-y divide-white/5 text-xs md:text-sm">
                   {RECENT_QUOTES.map((quote) => (
                     <tr key={quote.id} className="group hover:bg-white/5 transition-all cursor-pointer">
-                      <td className="px-8 py-6">
-                        <p className="font-black text-sm group-hover:text-orange transition-colors">{quote.id}</p>
-                        <p className="text-[10px] text-white/30 font-bold uppercase tracking-wider">{quote.client}</p>
+                      <td className="px-6 md:px-8 py-6">
+                        <p className="font-black group-hover:text-orange transition-colors">{quote.id}</p>
+                        <p className="text-[9px] text-white/30 font-bold uppercase tracking-wider">{quote.client}</p>
                       </td>
-                      <td className="px-8 py-6">
-                        <p className="text-sm font-bold text-white/80">{quote.vehicle}</p>
-                        <p className="text-[10px] text-white/20 font-medium">{quote.date}</p>
+                      <td className="px-6 md:px-8 py-6">
+                        <p className="font-bold text-white/80">{quote.vehicle}</p>
+                        <p className="text-[9px] text-white/20 font-medium">{quote.date}</p>
                       </td>
-                      <td className="px-8 py-6 text-sm font-black text-white">{quote.total}</td>
-                      <td className="px-8 py-6">
+                      <td className="px-6 md:px-8 py-6 font-black text-white">{quote.total}</td>
+                      <td className="px-6 md:px-8 py-6">
                         <span className={cn(
-                          "text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border",
+                          "text-[8px] md:text-[9px] font-black uppercase tracking-widest px-2 md:px-3 py-1.5 rounded-full border",
                           quote.status === "Cerrada" ? "bg-aquamarine/10 text-aquamarine border-aquamarine/20" :
                           quote.status === "Enviada" ? "bg-orange/10 text-orange border-orange/20" :
                           quote.status === "Pendiente" ? "bg-yellow/10 text-yellow border-yellow/20" :
@@ -125,7 +122,7 @@ export default function AdminDashboard() {
                           {quote.status}
                         </span>
                       </td>
-                      <td className="px-8 py-6 text-right">
+                      <td className="px-6 md:px-8 py-6 text-right">
                         <button className="text-white/20 hover:text-white transition-colors">
                           <MoreVertical size={20} />
                         </button>
@@ -138,7 +135,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* Quick Actions / Performance */}
-          <div className="col-span-4 space-y-8">
+          <div className="lg:col-span-4 space-y-8">
             <div className="glass-panel border-white/5 rounded-[40px] p-8">
               <h3 className="font-black uppercase tracking-tighter text-xl mb-8">Performance <span className="text-orange">Elite</span></h3>
               <div className="space-y-8">
@@ -170,20 +167,20 @@ export default function AdminDashboard() {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="bg-gradient-to-br from-orange to-yellow rounded-[40px] p-10 text-background relative overflow-hidden group cursor-pointer shadow-2xl shadow-orange/20"
+              className="bg-gradient-to-br from-orange to-yellow rounded-[40px] p-8 md:p-10 text-background relative overflow-hidden group cursor-pointer shadow-2xl shadow-orange/20"
             >
-              <div className="relative z-10">
-                <h3 className="font-black text-3xl tracking-tighter mb-2">Reporte Mayo</h3>
-                <p className="text-background/70 text-sm font-bold leading-tight mb-6">Análisis detallado de conversión y stock.</p>
-                <button className="bg-background text-orange px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-                  Descargar PDF
+              <div className="relative z-10 text-center sm:text-left">
+                <h3 className="font-black text-2xl md:text-3xl tracking-tighter mb-2">Reporte Mayo</h3>
+                <p className="text-background/70 text-sm font-bold leading-tight mb-6">Análisis detallado de conversión.</p>
+                <button className="w-full sm:w-auto bg-background text-orange px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                  Descargar
                 </button>
               </div>
-              <TrendingUp size={160} className="absolute -bottom-6 -right-6 text-background/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700" />
+              <TrendingUp size={160} className="absolute -bottom-6 -right-6 text-background/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 hidden sm:block" />
             </motion.div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </DashboardWrapper>
   );
 }
